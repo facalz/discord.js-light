@@ -435,7 +435,7 @@ module.exports = client => {
          count: null,
          me: null
       }, channel.messages.cache.has(data.message_id));
-      reaction.me = data.user_id === c.user.id;
+      reaction.me = data.user_id === c?.user?.id;
       if (channel.messages.cache.has(message.id)) {
          reaction.users.cache.set(user.id, user);
          reaction.count = reaction.users.cache.size;
@@ -463,7 +463,7 @@ module.exports = client => {
          count: null,
          me: null
       }, channel.messages.cache.has(data.message_id));
-      reaction.me = data.user_id === c.user.id;
+      reaction.me = data.user_id === c?.user?.id;
       if (channel.messages.cache.has(message.id)) {
          reaction.users.cache.delete(user.id);
          reaction.count = reaction.users.cache.size;

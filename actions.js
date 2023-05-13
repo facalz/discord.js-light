@@ -620,7 +620,7 @@ module.exports = client => {
       if (oldState && !newState) { guild.voiceStates.cache.delete(data.user_id); }
       if ((c.options.fetchAllMembers || c.users.cache.has(data.user_id)) && data.member) { guild.members.add(data.member); }
       if (oldState || newState) { c.emit(Constants.Events.VOICE_STATE_UPDATE, oldState, newState); }
-      if (data.user_id === c.user.id) {
+      if (data.user_id === c?.user?.id) {
          c.emit("debug", `[VOICE] received voice state update: ${JSON.stringify(data)}`);
          c.voice.onVoiceStateUpdate(data);
       }
